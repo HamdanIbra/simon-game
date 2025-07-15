@@ -38,9 +38,11 @@ function nextSequence() {
     var randomChosenColour = buttonColours[randomNum];
     gamePattern.push(randomChosenColour);
 
-    // Animate and play sound for the chosen color
-    $("#" + randomChosenColour).fadeOut(100).fadeIn(100);
-    playSound(randomChosenColour);
+    // Delay the animation & sound slightly
+    setTimeout(() => {
+        $("#" + randomChosenColour).fadeOut(100).fadeIn(100);
+        playSound(randomChosenColour);
+    }, 300);
 }
 
 // ✅ Check the user's most recent click
